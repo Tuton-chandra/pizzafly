@@ -21,7 +21,7 @@ import AdminLogin from "./components/AdminLogin.jsx";
 
 
 // =====================================================
-// CUSTOMER WEBSITE
+//  CUSTOMER WEBSITE
 // =====================================================
 
 function CustomerWebsite() {

@@ -7,7 +7,7 @@ function Navbar({
   onLoginClick,
   onOrderClick,
   onNavigate,
-}) {
+})  {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
 
