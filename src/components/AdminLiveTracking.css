@@ -1,0 +1,1012 @@
+
+/* =====================================================
+   ADMIN LIVE TRACKING
+===================================================== */
+
+.admin-live-tracking {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.live-tracking-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  margin-bottom: 20px;
+
+  box-sizing: border-box;
+}
+
+.live-tracking-header h2 {
+  margin: 0 0 6px;
+
+  font-size: 26px;
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+.live-tracking-header p {
+  margin: 0;
+
+  color: #777;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+
+/* =====================================================
+   LIVE INDICATOR
+===================================================== */
+
+.live-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 8px 13px;
+
+  border-radius: 999px;
+
+  background: #f0fff4;
+  color: #16803c;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+.live-indicator span {
+  width: 8px;
+  height: 8px;
+
+  display: block;
+
+  border-radius: 50%;
+
+  background: #20b15a;
+
+  box-shadow: 0 0 0 4px rgba(32, 177, 90, 0.12);
+}
+
+
+/* =====================================================
+   SUMMARY / INFO GRID
+===================================================== */
+
+.live-info-grid {
+  width: 100%;
+  min-width: 0;
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 16px;
+
+  margin-bottom: 20px;
+
+  box-sizing: border-box;
+}
+
+.live-info-card {
+  min-width: 0;
+
+  background: #ffffff;
+
+  border: 1px solid #e9e9e9;
+  border-radius: 16px;
+
+  padding: 18px;
+
+  box-sizing: border-box;
+
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+}
+
+.live-info-card > span {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #777;
+
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.live-info-card > strong {
+  display: block;
+
+  font-size: 24px;
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+
+/* =====================================================
+   MAIN TRACKING GRID
+===================================================== */
+
+.live-tracking-grid {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  display: grid;
+
+  grid-template-columns: minmax(0, 1fr) 340px;
+
+  gap: 20px;
+
+  margin-bottom: 20px;
+
+  box-sizing: border-box;
+}
+
+
+/* =====================================================
+   MAP CARD
+===================================================== */
+
+.live-map-card {
+  width: 100%;
+  min-width: 0;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid #e9e9e9;
+  border-radius: 18px;
+
+  box-sizing: border-box;
+
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+}
+
+
+/* =====================================================
+   MAP CARD HEADER
+===================================================== */
+
+.map-card-header {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  padding: 18px 20px;
+
+  box-sizing: border-box;
+}
+
+.map-card-header h3 {
+  margin: 0 0 5px;
+
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.map-card-header p {
+  margin: 0;
+
+  color: #777;
+
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+
+/* =====================================================
+   MAP
+===================================================== */
+
+.live-map {
+  position: relative;
+
+  width: 100%;
+  height: 500px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      45deg,
+      #f1f1f1 25%,
+      transparent 25%
+    ),
+    linear-gradient(
+      -45deg,
+      #f1f1f1 25%,
+      transparent 25%
+    ),
+    #fafafa;
+
+  background-size: 40px 40px;
+
+  box-sizing: border-box;
+}
+
+
+/* =====================================================
+   MAP ROADS
+===================================================== */
+
+.map-road {
+  position: absolute;
+
+  background: rgba(255, 255, 255, 0.95);
+
+  border: 1px solid #e4e4e4;
+
+  z-index: 1;
+}
+
+.map-road.horizontal {
+  width: 100%;
+  height: 26px;
+
+  left: 0;
+}
+
+.map-road.vertical {
+  width: 26px;
+  height: 100%;
+
+  top: 0;
+}
+
+.map-road.road-1 {
+  top: 28%;
+}
+
+.map-road.road-2 {
+  top: 68%;
+}
+
+.map-road.road-3 {
+  left: 32%;
+}
+
+.map-road.road-4 {
+  left: 72%;
+}
+
+
+/* =====================================================
+   MAP CENTER
+===================================================== */
+
+.map-center {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background: #111;
+  color: #fff;
+
+  font-size: 20px;
+
+  border: 4px solid #fff;
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.2);
+
+  z-index: 4;
+}
+
+
+/* =====================================================
+   DRONE MARKER
+===================================================== */
+
+.drone-marker {
+  position: absolute;
+
+  width: 46px;
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #111;
+  color: #fff;
+
+  font-size: 21px;
+
+  border: 4px solid #fff;
+
+  box-shadow:
+    0 7px 22px rgba(0, 0, 0, 0.22);
+
+  transform: translate(-50%, -50%);
+
+  z-index: 5;
+
+  transition:
+    left 0.4s ease,
+    top 0.4s ease,
+    transform 0.2s ease;
+}
+
+.drone-marker:hover {
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+
+/* =====================================================
+   MAP LOCATION LABEL
+===================================================== */
+
+.map-location-label {
+  position: absolute;
+
+  padding: 6px 10px;
+
+  background: #fff;
+
+  border-radius: 8px;
+
+  color: #333;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  white-space: nowrap;
+
+  box-shadow:
+    0 4px 14px rgba(0, 0, 0, 0.10);
+
+  z-index: 6;
+}
+
+
+/* =====================================================
+   DRONE PANEL
+===================================================== */
+
+.live-drone-panel {
+  width: 100%;
+  min-width: 0;
+
+  background: #fff;
+
+  border: 1px solid #e9e9e9;
+  border-radius: 18px;
+
+  padding: 20px;
+
+  box-sizing: border-box;
+
+  box-shadow:
+    0 4px 18px rgba(0, 0, 0, 0.04);
+}
+
+.live-drone-panel h3 {
+  margin: 0 0 10px;
+
+  font-size: 18px;
+  font-weight: 800;
+}
+
+
+/* =====================================================
+   DRONE ITEM
+===================================================== */
+
+.live-drone-item {
+  width: 100%;
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 14px 0;
+
+  border-bottom: 1px solid #eeeeee;
+
+  box-sizing: border-box;
+}
+
+.live-drone-item:last-child {
+  border-bottom: none;
+}
+
+
+/* =====================================================
+   DRONE ICON
+===================================================== */
+
+.live-drone-icon {
+  width: 42px;
+  height: 42px;
+
+  flex: 0 0 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: #f5f5f5;
+
+  font-size: 20px;
+}
+
+
+/* =====================================================
+   DRONE INFO
+===================================================== */
+
+.live-drone-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.live-drone-info strong {
+  display: block;
+
+  margin-bottom: 3px;
+
+  font-size: 14px;
+  font-weight: 800;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.live-drone-info small {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #777;
+
+  font-size: 12px;
+  line-height: 1.4;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.live-drone-status {
+  flex-shrink: 0;
+
+  padding: 6px 10px;
+
+  border-radius: 999px;
+
+  background: #f4f4f4;
+  color: #555;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+.live-drone-status.in-flight {
+  background: #eef6ff;
+  color: #2474c6;
+}
+
+.live-drone-status.available {
+  background: #effaf2;
+  color: #16803c;
+}
+
+.live-drone-status.maintenance {
+  background: #fff5e8;
+  color: #b66a00;
+}
+
+
+/* =====================================================
+   EMPTY STATE
+===================================================== */
+
+.tracking-empty {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  padding: 35px 15px;
+
+  text-align: center;
+
+  box-sizing: border-box;
+}
+
+.tracking-empty > div {
+  font-size: 36px;
+}
+
+.tracking-empty strong {
+  font-size: 14px;
+}
+
+.tracking-empty small {
+  max-width: 230px;
+
+  color: #777;
+
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+
+/* =====================================================
+   ACTIVE DELIVERIES
+===================================================== */
+
+.active-deliveries-card {
+  width: 100%;
+
+  margin-bottom: 20px;
+
+  box-sizing: border-box;
+}
+
+.active-deliveries-card .map-card-header {
+  padding-bottom: 5px;
+}
+
+.delivery-list {
+  width: 100%;
+
+  padding: 0 20px 10px;
+
+  box-sizing: border-box;
+}
+
+
+/* =====================================================
+   DRONE FLEET
+===================================================== */
+
+.tracking-drone-card {
+  width: 100%;
+
+  margin-bottom: 20px;
+
+  box-sizing: border-box;
+}
+
+.tracking-drone-card .map-card-header {
+  padding-bottom: 8px;
+}
+
+.tracking-drone-grid {
+  width: 100%;
+
+  padding: 0 20px 10px;
+
+  box-sizing: border-box;
+}
+
+
+/* =====================================================
+   BATTERY
+===================================================== */
+
+.tracking-battery {
+  width: 70px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.battery-track {
+  width: 100%;
+  height: 6px;
+
+  overflow: hidden;
+
+  border-radius: 999px;
+
+  background: #e9e9e9;
+}
+
+.battery-track span {
+  display: block;
+
+  height: 100%;
+
+  border-radius: inherit;
+
+  background: #222;
+
+  transition: width 0.3s ease;
+}
+
+.tracking-battery small {
+  color: #777;
+
+  font-size: 10px;
+
+  text-align: right;
+}
+
+
+/* =====================================================
+   TABLET / SMALL LAPTOP
+===================================================== */
+
+@media (max-width: 1100px) {
+
+  .live-tracking-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .live-map {
+    height: 430px;
+  }
+
+  .live-drone-panel {
+    width: 100%;
+  }
+
+  .live-drone-panel h3 {
+    margin-bottom: 5px;
+  }
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 768px) {
+
+  .admin-live-tracking {
+    width: 100%;
+  }
+
+  .live-tracking-header {
+    align-items: flex-start;
+
+    margin-bottom: 16px;
+  }
+
+  .live-tracking-header h2 {
+    font-size: 22px;
+  }
+
+  .live-tracking-header p {
+    font-size: 13px;
+  }
+
+
+  .live-info-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 12px;
+  }
+
+  .live-info-card {
+    padding: 15px;
+  }
+
+
+  .live-map {
+    height: 380px;
+  }
+
+
+  .map-card-header {
+    padding: 16px;
+  }
+
+
+  .live-drone-panel {
+    padding: 16px;
+  }
+
+
+  .delivery-list,
+  .tracking-drone-grid {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+
+  .live-drone-item {
+    gap: 10px;
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+
+  .live-tracking-header {
+    flex-direction: column;
+    align-items: stretch;
+
+    gap: 10px;
+
+    margin-bottom: 14px;
+  }
+
+  .live-tracking-header h2 {
+    font-size: 20px;
+  }
+
+  .live-tracking-header p {
+    font-size: 12px;
+  }
+
+  .live-indicator {
+    align-self: flex-start;
+
+    padding: 7px 11px;
+
+    font-size: 12px;
+  }
+
+
+  .live-info-grid {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+
+    margin-bottom: 14px;
+  }
+
+  .live-info-card {
+    padding: 14px;
+
+    border-radius: 14px;
+  }
+
+  .live-info-card > strong {
+    font-size: 21px;
+  }
+
+
+  .live-tracking-grid {
+    gap: 14px;
+
+    margin-bottom: 14px;
+  }
+
+
+  .live-map-card,
+  .live-drone-panel,
+  .active-deliveries-card,
+  .tracking-drone-card {
+    border-radius: 14px;
+  }
+
+
+  .map-card-header {
+    padding: 14px;
+  }
+
+  .map-card-header h3 {
+    font-size: 16px;
+  }
+
+  .map-card-header p {
+    font-size: 11px;
+  }
+
+
+  .live-map {
+    height: 300px;
+
+    background-size: 30px 30px;
+  }
+
+
+  .map-road.horizontal {
+    height: 20px;
+  }
+
+  .map-road.vertical {
+    width: 20px;
+  }
+
+
+  .map-center {
+    width: 38px;
+    height: 38px;
+
+    font-size: 17px;
+
+    border-width: 3px;
+  }
+
+
+  .drone-marker {
+    width: 38px;
+    height: 38px;
+
+    font-size: 17px;
+
+    border-width: 3px;
+  }
+
+
+  .map-location-label {
+    padding: 5px 7px;
+
+    font-size: 9px;
+  }
+
+
+  .live-drone-panel {
+    padding: 14px;
+  }
+
+
+  .live-drone-item {
+    gap: 8px;
+
+    padding: 12px 0;
+  }
+
+
+  .live-drone-icon {
+    width: 36px;
+    height: 36px;
+
+    flex-basis: 36px;
+
+    border-radius: 10px;
+
+    font-size: 17px;
+  }
+
+
+  .live-drone-info strong {
+    font-size: 13px;
+  }
+
+  .live-drone-info small {
+    font-size: 10px;
+  }
+
+
+  .live-drone-status {
+    padding: 5px 7px;
+
+    font-size: 9px;
+  }
+
+
+  .delivery-list,
+  .tracking-drone-grid {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+
+  .tracking-battery {
+    width: 55px;
+  }
+
+}
+
+
+/* =====================================================
+   VERY SMALL MOBILE
+===================================================== */
+
+@media (max-width: 360px) {
+
+  .live-tracking-header h2 {
+    font-size: 19px;
+  }
+
+
+  .live-map {
+    height: 260px;
+  }
+
+
+  .map-location-label {
+    padding: 4px 6px;
+
+    font-size: 8px;
+  }
+
+
+  .drone-marker {
+    width: 34px;
+    height: 34px;
+
+    font-size: 15px;
+  }
+
+
+  .map-center {
+    width: 34px;
+    height: 34px;
+
+    font-size: 15px;
+  }
+
+
+  .live-drone-item {
+    align-items: flex-start;
+  }
+
+
+  .live-drone-status {
+    padding: 4px 6px;
+
+    font-size: 8px;
+  }
+
+
+  .tracking-battery {
+    width: 45px;
+  }
+
+
+  .tracking-battery small {
+    font-size: 9px;
+  }
+
+
+  .live-info-card > strong {
+    font-size: 19px;
+  }
+
+}
+

@@ -1,0 +1,58 @@
+const pizzas = [
+  {
+    id: 1,
+    name: "Chicken BBQ",
+    price: 499,
+    rating: 4.8,
+    description: "Smoky chicken, BBQ sauce and mozzarella.",
+    tag: "Bestseller",
+    image: "https://images.unsplash.com/photo-1594007654729-407eedc4be65?w=600&q=80&auto=format&fit=crop",
+  },
+  {
+    id: 2,
+    name: "Cheese Burst",
+    price: 449,
+    rating: 4.6,
+    description: "Extra cheese, mozzarella and creamy cheese sauce.",
+    tag: "Classic",
+    image: "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&q=80&auto=format&fit=crop",
+  },
+  {
+    id: 3,
+    name: "Spicy Pepperoni",
+    price: 549,
+    rating: 4.9,
+    description: "Pepperoni, chili flakes and mozzarella.",
+    tag: "Spicy",
+    image: "https://images.unsplash.com/photo-1628840042765-356cda07504e?w=600&q=80&auto=format&fit=crop",
+  },
+  {
+    id: 4,
+    name: "Margherita",
+    price: 399,
+    rating: 4.5,
+    description: "Classic tomato sauce, mozzarella and basil.",
+    tag: "Classic",
+    image: "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=600&q=80&auto=format&fit=crop",
+  },
+  {
+    id: 5,
+    name: "Chicken Supreme",
+    price: 599,
+    rating: 4.7,
+    description: "Chicken, capsicum, onion, mushroom and mozzarella.",
+    tag: "Loaded",
+    image: "https://images.unsplash.com/photo-1601924582970-9238bcb495d9?w=600&q=80&auto=format&fit=crop",
+  },
+  {
+    id: 6,
+    name: "Beef BBQ",
+    price: 579,
+    rating: 4.8,
+    description: "BBQ beef, onion, cheese and special sauce.",
+    tag: "Loaded",
+    image: "https://images.unsplash.com/photo-1601924928357-85e7fbf28ba3?w=600&q=80&auto=format&fit=crop",
+  },
+];
+
+export default pizzas;
