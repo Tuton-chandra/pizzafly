@@ -7,6 +7,12 @@ import AdminCustomers from "./AdminCustomers.jsx";
 import AdminDrones from "./AdminDrones.jsx";
 import AdminLiveTracking from "./AdminLiveTracking.jsx";
 import AdminPayments from "./AdminPayments.jsx";
+import AdminReports from "./AdminReports.jsx";
+import AdminSettings from "./AdminSettings.jsx";
+import AdminAdministration from "./AdminAdministration.jsx";
+import NeedHelp from "./NeedHelp";
+import AdminNeedHelp from "./AdminNeedHelp";
+
 
 import {
   getOrders,
@@ -165,6 +171,7 @@ function AdminDashboard({ onLogout }) {
     "Payments",
     "Reports",
     "Settings",
+    "Need Help",
   ];
 
   const menuIcons = [
@@ -177,6 +184,7 @@ function AdminDashboard({ onLogout }) {
     "💳",
     "📈",
     "⚙️",
+    "🆘",
   ];
 
   // =====================================================
@@ -211,36 +219,15 @@ function AdminDashboard({ onLogout }) {
       return <AdminPayments />
 
     case "Reports":
-      return (
-        <div className="dashboard-placeholder">
-          <div className="placeholder-icon">
-            📈
-          </div>
-
-          <h2>Reports</h2>
-
-          <p>
-            Reports and analytics will be
-            available here.
-          </p>
-        </div>
-      );
+      return <AdminReports />;
 
     case "Settings":
-      return (
-        <div className="dashboard-placeholder">
-          <div className="placeholder-icon">
-            ⚙️
-          </div>
+      return <AdminSettings />;
 
-          <h2>Settings</h2>
-
-          <p>
-            Admin settings will be
-            available here.
-          </p>
-        </div>
-      );
+    case "Settings":
+      return <AdminAdministration />;
+    case "Need Help":
+      return <NeedHelp />;
 
       default:
         return (

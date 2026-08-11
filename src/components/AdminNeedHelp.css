@@ -1,0 +1,564 @@
+/* =====================================================
+   PIZZAFY ADMIN NEED HELP
+===================================================== */
+
+.admin-help-page {
+  width: 100%;
+  min-width: 0;
+  color: #111827;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.admin-help-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 22px;
+}
+
+.admin-help-header > div:first-child span {
+  color: #f97316;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+}
+
+.admin-help-header h1 {
+  margin: 5px 0;
+  font-size: 25px;
+}
+
+.admin-help-header p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 11px;
+}
+
+
+/* =====================================================
+   LIVE
+===================================================== */
+
+.live-indicator {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 12px;
+  border-radius: 20px;
+  background: #ecfdf5;
+  color: #047857;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.live-indicator i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 0 4px #d1fae5;
+}
+
+
+/* =====================================================
+   STATS
+===================================================== */
+
+.help-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.help-stat-card {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 15px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+}
+
+.help-stat-card > span {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  background: #fff7ed;
+  border-radius: 9px;
+  font-size: 17px;
+}
+
+.help-stat-card small {
+  display: block;
+  color: #6b7280;
+  font-size: 9px;
+}
+
+.help-stat-card strong {
+  display: block;
+  margin-top: 3px;
+  color: #111827;
+  font-size: 18px;
+}
+
+.help-stat-card.new {
+  border-color: #fed7aa;
+}
+
+
+/* =====================================================
+   TOOLBAR
+===================================================== */
+
+.help-toolbar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.help-search {
+  flex: 1;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 12px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 9px;
+}
+
+.help-search input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #111827;
+  font-size: 11px;
+}
+
+.help-toolbar select {
+  height: 42px;
+  padding: 0 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 9px;
+  background: #fff;
+  color: #374151;
+  outline: none;
+  font-size: 11px;
+}
+
+
+/* =====================================================
+   MAIN CONTENT
+===================================================== */
+
+.help-content {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.85fr) minmax(0, 1.4fr);
+  gap: 15px;
+  min-width: 0;
+}
+
+
+/* =====================================================
+   MESSAGE LIST
+===================================================== */
+
+.help-message-list,
+.help-details {
+  min-width: 0;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 13px;
+  overflow: hidden;
+}
+
+.help-list-header {
+  padding: 17px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.help-list-header h2 {
+  margin: 0;
+  font-size: 14px;
+}
+
+.help-list-header p {
+  margin: 4px 0 0;
+  color: #9ca3af;
+  font-size: 9px;
+}
+
+
+/* =====================================================
+   MESSAGE ITEM
+===================================================== */
+
+.help-message-item {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 13px;
+  border: none;
+  border-bottom: 1px solid #f1f5f9;
+  background: #fff;
+  text-align: left;
+  cursor: pointer;
+}
+
+.help-message-item:hover {
+  background: #fffaf5;
+}
+
+.help-message-item.active {
+  background: #fff7ed;
+}
+
+.message-avatar {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #111827;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.message-summary {
+  min-width: 0;
+  flex: 1;
+}
+
+.message-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.message-top strong {
+  color: #111827;
+  font-size: 11px;
+}
+
+.message-top small {
+  color: #9ca3af;
+  font-size: 8px;
+}
+
+.message-summary > span {
+  display: block;
+  margin-top: 3px;
+  color: #f97316;
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.message-summary p {
+  margin: 4px 0 0;
+  overflow: hidden;
+  color: #6b7280;
+  font-size: 9px;
+  line-height: 1.4;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.new-dot {
+  width: 7px;
+  height: 7px;
+  flex-shrink: 0;
+  margin-top: 5px;
+  border-radius: 50%;
+  background: #f97316;
+}
+
+
+/* =====================================================
+   DETAILS
+===================================================== */
+
+.help-details {
+  min-height: 470px;
+}
+
+.detail-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 20px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.detail-header > div > span {
+  color: #f97316;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.detail-header h2 {
+  margin: 5px 0 0;
+  font-size: 17px;
+}
+
+.detail-status {
+  padding: 5px 9px;
+  border-radius: 20px;
+  background: #fff7ed;
+  color: #ea580c;
+  font-size: 8px;
+  font-weight: 700;
+}
+
+.detail-status.read {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.detail-status.replied {
+  background: #ecfdf5;
+  color: #047857;
+}
+
+
+/* =====================================================
+   CUSTOMER
+===================================================== */
+
+.customer-detail {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin: 18px;
+  padding: 13px;
+  background: #f9fafb;
+  border-radius: 10px;
+}
+
+.large-avatar {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #f97316;
+  color: #fff;
+  font-weight: 700;
+}
+
+.customer-detail strong {
+  display: block;
+  font-size: 12px;
+}
+
+.customer-detail small {
+  display: block;
+  margin-top: 3px;
+  color: #6b7280;
+  font-size: 9px;
+}
+
+
+/* =====================================================
+   MESSAGE BODY
+===================================================== */
+
+.message-body {
+  margin: 18px;
+}
+
+.message-body label {
+  display: block;
+  margin-bottom: 8px;
+  color: #9ca3af;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.message-body p {
+  margin: 0;
+  padding: 15px;
+  background: #f9fafb;
+  border-radius: 9px;
+  color: #374151;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+
+/* =====================================================
+   ACTIONS
+===================================================== */
+
+.support-actions {
+  display: flex;
+  gap: 8px;
+  margin: 18px;
+}
+
+.support-action {
+  padding: 9px 13px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.support-action.call {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.support-action.whatsapp {
+  background: #ecfdf5;
+  color: #047857;
+}
+
+.support-action.email {
+  background: #fff7ed;
+  color: #ea580c;
+}
+
+
+/* =====================================================
+   FOOTER ACTIONS
+===================================================== */
+
+.detail-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 16px 18px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.reply-btn {
+  border: none;
+  padding: 9px 13px;
+  border-radius: 8px;
+  background: #f97316;
+  color: #fff;
+  font-size: 9px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.delete-support-btn {
+  border: 1px solid #fecaca;
+  padding: 9px 13px;
+  border-radius: 8px;
+  background: #fff;
+  color: #dc2626;
+  font-size: 9px;
+  cursor: pointer;
+}
+
+
+/* =====================================================
+   EMPTY
+===================================================== */
+
+.help-empty,
+.help-no-selection {
+  min-height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 30px;
+  text-align: center;
+}
+
+.help-empty div,
+.help-no-selection div {
+  margin-bottom: 10px;
+  font-size: 35px;
+}
+
+.help-empty strong,
+.help-no-selection h3 {
+  color: #111827;
+  font-size: 13px;
+}
+
+.help-empty p,
+.help-no-selection p {
+  max-width: 250px;
+  margin: 5px 0 0;
+  color: #9ca3af;
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1100px) {
+
+  .help-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .help-content {
+    grid-template-columns: 1fr;
+  }
+
+  .help-details {
+    min-height: 400px;
+  }
+}
+
+
+@media (max-width: 700px) {
+
+  .admin-help-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .help-toolbar {
+    flex-direction: column;
+  }
+
+  .help-toolbar select {
+    width: 100%;
+  }
+}
+
+
+@media (max-width: 480px) {
+
+  .help-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-header {
+    flex-direction: column;
+  }
+
+  .support-actions {
+    flex-direction: column;
+  }
+
+  .support-action {
+    text-align: center;
+  }
+}

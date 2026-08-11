@@ -1,0 +1,827 @@
+/* =========================================================
+   PIZZAFLY PROFESSIONAL FOOTER
+========================================================= */
+
+.pizzafly-footer {
+  width: 100%;
+  background: #0d0d0d;
+  color: #ffffff;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-container {
+  width: min(1200px, calc(100% - 48px));
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    1.5fr
+    1fr
+    1.15fr
+    1.3fr;
+
+  gap: 50px;
+
+  padding: 65px 0 50px;
+}
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.footer-brand {
+  min-width: 0;
+}
+
+.footer-logo {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 9px;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 25px;
+  font-weight: 800;
+
+  letter-spacing: -0.7px;
+}
+
+.footer-logo-icon {
+  width: 39px;
+  height: 39px;
+
+  display: grid;
+  place-items: center;
+
+  background: #ff6500;
+
+  border-radius: 11px;
+
+  font-size: 20px;
+
+  box-shadow:
+    0 8px 25px rgba(255, 101, 0, 0.2);
+}
+
+.footer-logo span:last-child span {
+  color: #ff6500;
+}
+
+.footer-description {
+  max-width: 310px;
+
+  margin: 18px 0 22px;
+
+  color: #8c8c8c;
+
+  font-size: 13px;
+
+  line-height: 1.8;
+}
+
+/* =========================================================
+   SOCIAL
+========================================================= */
+
+.footer-socials {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+}
+
+.social-link {
+  width: 36px;
+  height: 36px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  border-radius: 10px;
+
+  background: #151515;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.social-link:hover {
+  transform: translateY(-3px);
+  background: #ff6500;
+  border-color: #ff6500;
+}
+
+/* =========================================================
+   FOOTER COLUMNS
+========================================================= */
+
+.footer-column {
+  min-width: 0;
+}
+
+.footer-column h3 {
+  margin: 2px 0 20px;
+
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.footer-column ul {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.footer-column li {
+  margin: 0;
+}
+
+.footer-column a,
+.footer-action-link {
+  display: inline-flex;
+  align-items: center;
+
+  width: fit-content;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #888888;
+
+  font-family: inherit;
+
+  font-size: 12px;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.footer-column a:hover,
+.footer-action-link:hover {
+  color: #ff6500;
+
+  transform: translateX(3px);
+}
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.footer-contact {
+  min-width: 0;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 11px;
+
+  margin-bottom: 17px;
+}
+
+.contact-icon {
+  width: 30px;
+  height: 30px;
+
+  display: grid;
+  place-items: center;
+
+  flex-shrink: 0;
+
+  background: #171717;
+
+  border-radius: 8px;
+
+  font-size: 13px;
+}
+
+.contact-item strong {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #ffffff;
+
+  font-size: 11px;
+}
+
+.contact-item p,
+.contact-item a {
+  margin: 0;
+
+  color: #858585;
+
+  font-size: 11px;
+
+  line-height: 1.5;
+}
+
+.contact-item a:hover {
+  color: #ff6500;
+}
+
+/* =========================================================
+   BUSINESS INFO BAR
+========================================================= */
+
+.footer-business-bar {
+  width: min(1200px, calc(100% - 48px));
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 15px;
+
+  padding: 22px 0;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.business-info {
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  min-width: 0;
+}
+
+.business-info > span {
+  width: 35px;
+  height: 35px;
+
+  display: grid;
+  place-items: center;
+
+  flex-shrink: 0;
+
+  background: #171717;
+
+  border-radius: 9px;
+
+  font-size: 15px;
+}
+
+.business-info strong {
+  display: block;
+
+  color: #eeeeee;
+
+  font-size: 11px;
+}
+
+.business-info small {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #777777;
+
+  font-size: 9px;
+}
+
+/* =========================================================
+   BOTTOM FOOTER
+========================================================= */
+
+.footer-bottom {
+  width: min(1200px, calc(100% - 48px));
+
+  min-height: 70px;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  color: #666666;
+
+  font-size: 10px;
+}
+
+.footer-bottom strong {
+  color: #dddddd;
+}
+
+.footer-legal {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+}
+
+.footer-legal a {
+  color: #707070;
+
+  text-decoration: none;
+
+  transition: color 0.2s ease;
+}
+
+.footer-legal a:hover {
+  color: #ff6500;
+}
+
+.footer-made {
+  color: #555555;
+}
+
+/* =========================================================
+   SUPPORT MODAL
+========================================================= */
+
+.support-modal-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(0, 0, 0, 0.72);
+
+  backdrop-filter: blur(6px);
+}
+
+.support-modal {
+  width: min(650px, 100%);
+
+  max-height: calc(100vh - 40px);
+
+  overflow-y: auto;
+
+  background: #ffffff;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.3);
+
+  color: #111827;
+}
+
+/* =========================================================
+   MODAL HEADER
+========================================================= */
+
+.support-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 25px 25px 20px;
+
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.support-eyebrow {
+  color: #f97316;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+.support-modal-header h2 {
+  margin: 6px 0 5px;
+
+  color: #111827;
+
+  font-size: 22px;
+}
+
+.support-modal-header p {
+  margin: 0;
+
+  color: #6b7280;
+
+  font-size: 11px;
+}
+
+.support-close {
+  width: 34px;
+  height: 34px;
+
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  color: #6b7280;
+
+  font-size: 22px;
+
+  line-height: 1;
+
+  cursor: pointer;
+}
+
+.support-close:hover {
+  background: #fff7ed;
+
+  border-color: #fed7aa;
+
+  color: #ea580c;
+}
+
+/* =========================================================
+   SUPPORT FORM
+========================================================= */
+
+.support-form {
+  padding: 22px 25px 25px;
+}
+
+.support-form-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 15px;
+}
+
+.support-field {
+  margin-bottom: 15px;
+}
+
+.support-field label {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #374151;
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.support-field input,
+.support-field select,
+.support-field textarea {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 9px;
+
+  outline: none;
+
+  background: #f9fafb;
+
+  color: #111827;
+
+  font-family: inherit;
+
+  font-size: 11px;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.support-field input,
+.support-field select {
+  height: 41px;
+
+  padding: 0 11px;
+}
+
+.support-field textarea {
+  min-height: 105px;
+
+  padding: 11px;
+
+  resize: vertical;
+}
+
+.support-field input:focus,
+.support-field select:focus,
+.support-field textarea:focus {
+  background: #ffffff;
+
+  border-color: #fb923c;
+
+  box-shadow:
+    0 0 0 3px rgba(249, 115, 22, 0.08);
+}
+
+/* =========================================================
+   FORM ACTIONS
+========================================================= */
+
+.support-form-actions {
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 9px;
+
+  margin-top: 5px;
+}
+
+.support-cancel,
+.support-submit {
+  height: 40px;
+
+  padding: 0 16px;
+
+  border-radius: 9px;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.support-cancel {
+  border: 1px solid #e5e7eb;
+
+  background: #ffffff;
+
+  color: #6b7280;
+}
+
+.support-submit {
+  border: none;
+
+  background: #f97316;
+
+  color: #ffffff;
+
+  box-shadow:
+    0 5px 15px rgba(249, 115, 22, 0.18);
+}
+
+.support-submit:hover {
+  background: #ea580c;
+}
+
+/* =========================================================
+   DIRECT SUPPORT
+========================================================= */
+
+.support-direct {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  padding: 15px 25px;
+
+  background: #f9fafb;
+
+  border-top: 1px solid #f1f5f9;
+
+  color: #6b7280;
+
+  font-size: 10px;
+}
+
+.support-direct > span {
+  margin-right: 4px;
+
+  color: #374151;
+
+  font-weight: 600;
+}
+
+.support-direct a {
+  padding: 6px 9px;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 7px;
+
+  background: #ffffff;
+
+  color: #374151;
+
+  text-decoration: none;
+
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.support-direct a:hover {
+  color: #ea580c;
+
+  border-color: #fed7aa;
+
+  background: #fff7ed;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .footer-container {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 40px 30px;
+  }
+
+  .footer-brand {
+    grid-column: span 2;
+  }
+
+  .footer-description {
+    max-width: 520px;
+  }
+
+  .footer-business-bar {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom {
+    flex-wrap: wrap;
+
+    padding: 20px 0;
+  }
+
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .footer-container {
+    width: min(100% - 36px, 520px);
+
+    grid-template-columns: 1fr;
+
+    gap: 32px;
+
+    padding: 45px 0 35px;
+  }
+
+  .footer-brand {
+    grid-column: auto;
+  }
+
+  .footer-column h3 {
+    margin-bottom: 14px;
+  }
+
+  .footer-business-bar {
+    width: min(100% - 36px, 520px);
+
+    gap: 20px;
+
+    padding: 20px 0;
+  }
+
+  .footer-bottom {
+    width: min(100% - 36px, 520px);
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 12px;
+
+    padding: 22px 0;
+
+    line-height: 1.5;
+  }
+
+  .footer-legal {
+    flex-wrap: wrap;
+  }
+
+  .support-modal-overlay {
+    padding: 12px;
+  }
+
+  .support-modal {
+    border-radius: 14px;
+  }
+
+  .support-modal-header {
+    padding: 20px 18px 17px;
+  }
+
+  .support-form {
+    padding: 18px;
+  }
+
+  .support-form-grid {
+    grid-template-columns: 1fr;
+
+    gap: 0;
+  }
+
+  .support-direct {
+    padding: 14px 18px;
+  }
+
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+  .footer-container {
+    width: calc(100% - 28px);
+  }
+
+  .footer-business-bar,
+  .footer-bottom {
+    width: calc(100% - 28px);
+  }
+
+  .footer-logo {
+    font-size: 22px;
+  }
+
+  .footer-logo-icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .footer-legal {
+    gap: 6px;
+  }
+
+  .support-modal-header h2 {
+    font-size: 19px;
+  }
+
+  .support-form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .support-cancel,
+  .support-submit {
+    width: 100%;
+  }
+
+}
