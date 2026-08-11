@@ -8,9 +8,10 @@ const safetyPoints = [
   { icon: '🧑‍💻', title: 'Human Supervision', desc: 'Every flight plan is designed to be supervised by a human operator.' },
 ];
 
-function About() {
+function About()  {
+  
   return (
-    <section className="section about">
+    <section className= "section about">
       <div className="container">
         <div className="about__grid">
           <div>
