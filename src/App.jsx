@@ -19,22 +19,9 @@ import Footer from "./components/Footer.jsx";
 import AdminDashboard from "./components/AdminDashboard.jsx";
 import AdminLogin from "./components/AdminLogin.jsx";
 
-
-// =====================================================
-//  CUSTOMER WEBSITE
-// =====================================================
-
 function CustomerWebsite() {
-  // ---------------------------------------------------
-  // CART STATE
-  // ---------------------------------------------------
-
   const [cartItems, setCartItems] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
-
-  // ---------------------------------------------------
-  // MODAL / FLOW STATE
-  // ---------------------------------------------------
 
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
@@ -44,18 +31,10 @@ function CustomerWebsite() {
   const [deliveryAddress, setDeliveryAddress] =
     useState("Dhaka, Bangladesh");
 
-  // ---------------------------------------------------
-  // SECTION REFS
-  // ---------------------------------------------------
-
   const menuRef = useRef(null);
   const trackingRef = useRef(null);
   const howItWorksRef = useRef(null);
   const aboutRef = useRef(null);
-
-  // ---------------------------------------------------
-  // SMOOTH SCROLL
-  // ---------------------------------------------------
 
   const scrollTo = useCallback((ref) => {
     ref.current?.scrollIntoView({
@@ -63,10 +42,6 @@ function CustomerWebsite() {
       block: "start",
     });
   }, []);
-
-  // ===================================================
-  // CART OPERATIONS
-  // ===================================================
 
   const addToCart = (pizza) => {
     setCartItems((prev) => {
@@ -131,10 +106,6 @@ function CustomerWebsite() {
     );
   };
 
-  // ===================================================
-  // CART CALCULATIONS
-  // ===================================================
-
   const cartCount = cartItems.reduce(
     (sum, item) => sum + item.qty,
     0
@@ -146,42 +117,25 @@ function CustomerWebsite() {
     0
   );
 
-  const deliveryFee =
-    cartItems.length > 0 ? 50 : 0;
-
+  const deliveryFee = cartItems.length > 0 ? 50 : 0;
   const total = subtotal + deliveryFee;
 
-  // ===================================================
-  // CHECKOUT
-  // ===================================================
-
   const openCheckout = () => {
-    if (cartItems.length === 0) {
-      return;
-    }
+    if (cartItems.length === 0) return;
 
     setOrder(null);
     setIsCartOpen(false);
     setIsCheckoutOpen(true);
   };
 
-  // ===================================================
-  // PLACE ORDER
-  // ===================================================
-
   const placeOrder = (formData) => {
     const orderId = `PF-2026-${Date.now()}`;
 
     const newOrder = {
       id: orderId,
-
       name: formData.name || "",
-
       phone: formData.phone || "",
-
-      address:
-        formData.address ||
-        deliveryAddress,
+      address: formData.address || deliveryAddress,
 
       items: cartItems.map((item) => ({
         id: item.id,
@@ -191,39 +145,27 @@ function CustomerWebsite() {
       })),
 
       subtotal,
-
       deliveryFee,
-
       total,
 
-      payment:
-        formData.payment ||
-        "Cash on Delivery",
+      payment: formData.payment || "Cash on Delivery",
 
       status: "Pending",
-
       eta: 10,
-
-      createdAt:
-        new Date().toISOString(),
+      createdAt: new Date().toISOString(),
     };
 
-    // Save order
     addOrder(newOrder);
 
-    // Keep tracking flow working
     setOrder({
       ...newOrder,
       status: "confirmed",
     });
 
-    // Update address
     setDeliveryAddress(
-      formData.address ||
-        deliveryAddress
+      formData.address || deliveryAddress
     );
 
-    // Empty cart
     setCartItems([]);
 
     console.log(
@@ -231,10 +173,6 @@ function CustomerWebsite() {
       newOrder
     );
   };
-
-  // ===================================================
-  // TRACK ORDER
-  // ===================================================
 
   const trackOrder = () => {
     setIsCheckoutOpen(false);
@@ -244,119 +182,62 @@ function CustomerWebsite() {
     }, 100);
   };
 
-  // ===================================================
-  // CUSTOMER UI
-  // ===================================================
-
   return (
     <div className="pizza-fly-app">
-
-      {/* NAVBAR */}
-
       <Navbar
         cartCount={cartCount}
-        onCartClick={() =>
-          setIsCartOpen(true)
-        }
-        onLoginClick={() =>
-          setIsLoginOpen(true)
-        }
-        onOrderClick={() =>
-          scrollTo(menuRef)
-        }
+        onCartClick={() => setIsCartOpen(true)}
+        onLoginClick={() => setIsLoginOpen(true)}
+        onOrderClick={() => scrollTo(menuRef)}
         onNavigate={{
-          menu: () =>
-            scrollTo(menuRef),
-
-          tracking: () =>
-            scrollTo(trackingRef),
-
-          how: () =>
-            scrollTo(howItWorksRef),
-
-          about: () =>
-            scrollTo(aboutRef),
+          menu: () => scrollTo(menuRef),
+          tracking: () => scrollTo(trackingRef),
+          how: () => scrollTo(howItWorksRef),
+          about: () => scrollTo(aboutRef),
         }}
       />
 
       <main>
-
-        {/* HERO */}
-
         <Hero
-          onOrderClick={() =>
-            scrollTo(menuRef)
-          }
-          onTrackClick={() =>
-            scrollTo(trackingRef)
-          }
+          onOrderClick={() => scrollTo(menuRef)}
+          onTrackClick={() => scrollTo(trackingRef)}
         />
 
-        {/* HOW IT WORKS */}
-
-        <section
-          ref={howItWorksRef}
-        >
+        <section ref={howItWorksRef}>
           <HowItWorks />
         </section>
 
-        {/* FEATURES */}
-
         <Features />
 
-        {/* PIZZA MENU */}
-
         <section ref={menuRef}>
-          <PizzaMenu
-            onAddToCart={addToCart}
-          />
+          <PizzaMenu onAddToCart={addToCart} />
         </section>
-
-        {/* TRACKING */}
 
         <section ref={trackingRef}>
           <Tracking
             order={order}
             address={deliveryAddress}
-            onAddressChange={
-              setDeliveryAddress
-            }
+            onAddressChange={setDeliveryAddress}
           />
         </section>
-
-        {/* ABOUT */}
 
         <section ref={aboutRef}>
           <About />
         </section>
-
       </main>
-
-      {/* FOOTER */}
 
       <Footer
         onNavigate={{
-          menu: () =>
-            scrollTo(menuRef),
-
-          tracking: () =>
-            scrollTo(trackingRef),
-
-          how: () =>
-            scrollTo(howItWorksRef),
-
-          about: () =>
-            scrollTo(aboutRef),
+          menu: () => scrollTo(menuRef),
+          tracking: () => scrollTo(trackingRef),
+          how: () => scrollTo(howItWorksRef),
+          about: () => scrollTo(aboutRef),
         }}
       />
 
-      {/* CART */}
-
       <Cart
         isOpen={isCartOpen}
-        onClose={() =>
-          setIsCartOpen(false)
-        }
+        onClose={() => setIsCartOpen(false)}
         items={cartItems}
         onIncrease={increaseQty}
         onDecrease={decreaseQty}
@@ -367,13 +248,9 @@ function CustomerWebsite() {
         onCheckout={openCheckout}
       />
 
-      {/* CHECKOUT */}
-
       <Checkout
         isOpen={isCheckoutOpen}
-        onClose={() =>
-          setIsCheckoutOpen(false)
-        }
+        onClose={() => setIsCheckoutOpen(false)}
         total={total}
         order={order}
         onPlaceOrder={placeOrder}
@@ -381,99 +258,55 @@ function CustomerWebsite() {
         defaultAddress={deliveryAddress}
       />
 
-      {/* LOGIN */}
-
       <LoginModal
         isOpen={isLoginOpen}
-        onClose={() =>
-          setIsLoginOpen(false)
-        }
+        onClose={() => setIsLoginOpen(false)}
       />
-
     </div>
   );
 }
 
-
-// =====================================================
-// MAIN APP / ROUTER
-// =====================================================
-
 function App() {
   const [isAdminLoggedIn, setIsAdminLoggedIn] =
     useState(
-      sessionStorage.getItem(
-        "pizzafly_admin"
-      ) === "true"
+      sessionStorage.getItem("pizzafly_admin") === "true"
     );
-
-  // ---------------------------------------------------
-  // ADMIN LOGIN
-  // ---------------------------------------------------
 
   const handleAdminLogin = () => {
-    sessionStorage.setItem(
-      "pizzafly_admin",
-      "true"
-    );
-
+    sessionStorage.setItem("pizzafly_admin", "true");
     setIsAdminLoggedIn(true);
   };
 
-  // ---------------------------------------------------
-  // ADMIN LOGOUT
-  // ---------------------------------------------------
-
   const handleAdminLogout = () => {
-    sessionStorage.removeItem(
-      "pizzafly_admin"
-    );
-
+    sessionStorage.removeItem("pizzafly_admin");
     setIsAdminLoggedIn(false);
   };
-
-  // ---------------------------------------------------
-  // ROUTES
-  // ---------------------------------------------------
 
   return (
     <BrowserRouter>
       <Routes>
-
-        {/* CUSTOMER WEBSITE */}
-
         <Route
           path="/"
-          element={
-            <CustomerWebsite />
-          }
+          element={<CustomerWebsite />}
         />
-
-        {/* ADMIN */}
 
         <Route
           path="/admin"
           element={
             isAdminLoggedIn ? (
               <AdminDashboard
-                onLogout={
-                  handleAdminLogout
-                }
+                onLogout={handleAdminLogout}
               />
             ) : (
               <AdminLogin
-                onLogin={
-                  handleAdminLogin
-                }
+                onLogin={handleAdminLogin}
               />
             )
           }
         />
-
       </Routes>
     </BrowserRouter>
   );
 }
-
 
 export default App;

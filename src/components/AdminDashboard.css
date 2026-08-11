@@ -1,18 +1,22 @@
 /* =========================================================
    PIZZAFY ADMIN DASHBOARD
-   COMPLETE CSS
-   ========================================================= */
-
+   FIXED + RESPONSIVE CSS
+========================================================= */
 
 /* =========================================================
-   ROOT DASHBOARD
-   ========================================================= */
+   GLOBAL RESET
+========================================================= */
 
-.admin-dashboard {
-  min-height: 100vh;
+.admin-layout,
+.admin-layout *,
+.admin-layout *::before,
+.admin-layout *::after {
+  box-sizing: border-box;
+}
+
+.admin-layout {
   width: 100%;
-
-  display: flex;
+  min-height: 100vh;
 
   background: #f8fafc;
   color: #111827;
@@ -22,24 +26,28 @@
     Arial,
     Helvetica,
     sans-serif;
+}
 
-  box-sizing: border-box;
+.admin-layout img {
+  max-width: 100%;
 }
 
 
 /* =========================================================
    SIDEBAR
-   ========================================================= */
+========================================================= */
 
 .admin-sidebar {
-  width: 250px;
-  min-width: 250px;
-  height: 100vh;
-
   position: fixed;
+
   left: 0;
   top: 0;
   bottom: 0;
+
+  width: 250px;
+
+  height: 100vh;
+  height: 100dvh;
 
   padding: 28px 16px;
 
@@ -51,15 +59,32 @@
   display: flex;
   flex-direction: column;
 
+  overflow-y: auto;
+  overflow-x: hidden;
+
   z-index: 1000;
 
-  box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: #374151 transparent;
+}
+
+.admin-sidebar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.admin-sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.admin-sidebar::-webkit-scrollbar-thumb {
+  background: #374151;
+  border-radius: 10px;
 }
 
 
 /* =========================================================
    LOGO
-   ========================================================= */
+========================================================= */
 
 .admin-logo {
   display: flex;
@@ -75,9 +100,11 @@
   font-weight: 700;
 
   white-space: nowrap;
+
+  flex-shrink: 0;
 }
 
-.admin-logo span:first-child {
+.admin-logo > span:first-child {
   font-size: 30px;
 }
 
@@ -92,7 +119,7 @@
 
 /* =========================================================
    ADMIN LABEL
-   ========================================================= */
+========================================================= */
 
 .admin-label {
   padding: 0 13px 12px;
@@ -105,43 +132,50 @@
   letter-spacing: 1.5px;
 
   text-transform: uppercase;
+
+  flex-shrink: 0;
 }
 
 
 /* =========================================================
-   SIDEBAR NAVIGATION
-   ========================================================= */
+   NAVIGATION
+========================================================= */
 
 .admin-nav {
+  width: 100%;
+
   display: flex;
   flex-direction: column;
 
   gap: 5px;
 
-  width: 100%;
+  flex-shrink: 0;
 }
 
 .admin-nav button {
   width: 100%;
 
-  border: none;
-  outline: none;
-
-  background: transparent;
-
-  color: #d1d5db;
+  min-height: 44px;
 
   padding: 13px 16px;
 
   margin: 2px 0;
 
+  border: none;
+  outline: none;
+
   border-radius: 10px;
+
+  background: transparent;
+
+  color: #d1d5db;
 
   display: flex;
   align-items: center;
 
   gap: 14px;
 
+  font-family: inherit;
   font-size: 14px;
   font-weight: 500;
 
@@ -154,12 +188,11 @@
     color 0.2s ease,
     transform 0.2s ease;
 
-  box-sizing: border-box;
+  flex-shrink: 0;
 }
 
 .admin-nav button:hover {
   background: #1f2937;
-
   color: #ffffff;
 
   transform: translateX(2px);
@@ -179,7 +212,7 @@
 
 /* =========================================================
    NAV ICON
-   ========================================================= */
+========================================================= */
 
 .nav-icon {
   width: 24px;
@@ -201,20 +234,26 @@
 
 /* =========================================================
    SIDEBAR BOTTOM
-   ========================================================= */
+========================================================= */
 
 .sidebar-bottom {
+  width: 100%;
+
   margin-top: auto;
 
-  background: transparent;
+  padding-top: 20px;
+
+  flex-shrink: 0;
 }
 
 
 /* =========================================================
    SUPPORT BOX
-   ========================================================= */
+========================================================= */
 
 .admin-support {
+  width: 100%;
+
   display: flex;
   align-items: flex-start;
 
@@ -231,12 +270,11 @@
   border: 1px solid #374151;
 
   border-radius: 12px;
-
-  box-sizing: border-box;
 }
 
 .admin-support > span {
   font-size: 20px;
+  flex-shrink: 0;
 }
 
 .admin-support strong,
@@ -261,10 +299,12 @@
 
 /* =========================================================
    LOGOUT
-   ========================================================= */
+========================================================= */
 
 .logout-btn {
   width: 100%;
+
+  min-height: 42px;
 
   padding: 12px;
 
@@ -275,6 +315,8 @@
   background: #1f2937;
 
   color: #fca5a5;
+
+  font-family: inherit;
 
   cursor: pointer;
 
@@ -295,7 +337,7 @@
 
 /* =========================================================
    MAIN AREA
-   ========================================================= */
+========================================================= */
 
 .admin-main {
   width: calc(100% - 250px);
@@ -308,14 +350,12 @@
   background: #f8fafc;
 
   color: #111827;
-
-  box-sizing: border-box;
 }
 
 
 /* =========================================================
    TOPBAR
-   ========================================================= */
+========================================================= */
 
 .admin-topbar {
   width: 100%;
@@ -333,17 +373,17 @@
   justify-content: space-between;
 
   gap: 20px;
-
-  box-sizing: border-box;
 }
 
 
 /* =========================================================
    PAGE TITLE
-   ========================================================= */
+========================================================= */
 
 .admin-page-title {
   min-width: 0;
+
+  flex: 1;
 }
 
 .admin-page-title h1 {
@@ -366,7 +406,7 @@
 
 /* =========================================================
    TOP ACTIONS
-   ========================================================= */
+========================================================= */
 
 .admin-top-actions {
   display: flex;
@@ -380,7 +420,7 @@
 
 /* =========================================================
    SEARCH
-   ========================================================= */
+========================================================= */
 
 .admin-search {
   width: 210px;
@@ -401,11 +441,12 @@
 
   color: #6b7280;
 
-  box-sizing: border-box;
+  flex-shrink: 0;
 }
 
 .admin-search input {
   width: 100%;
+  min-width: 0;
 
   border: none;
   outline: none;
@@ -414,6 +455,7 @@
 
   color: #111827;
 
+  font-family: inherit;
   font-size: 13px;
 }
 
@@ -424,11 +466,13 @@
 
 /* =========================================================
    NOTIFICATION
-   ========================================================= */
+========================================================= */
 
 .notification-btn {
   width: 40px;
   height: 40px;
+
+  padding: 0;
 
   border: 1px solid #e5e7eb;
 
@@ -441,6 +485,8 @@
   cursor: pointer;
 
   position: relative;
+
+  flex-shrink: 0;
 }
 
 .notification-btn span {
@@ -460,7 +506,7 @@
 
 /* =========================================================
    PROFILE
-   ========================================================= */
+========================================================= */
 
 .admin-profile {
   display: flex;
@@ -487,6 +533,8 @@
   place-items: center;
 
   font-weight: 700;
+
+  flex-shrink: 0;
 }
 
 .admin-profile strong,
@@ -511,7 +559,7 @@
 
 /* =========================================================
    CONTENT
-   ========================================================= */
+========================================================= */
 
 .admin-content {
   width: 100%;
@@ -525,13 +573,13 @@
 
   color: #111827;
 
-  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 
 /* =========================================================
    STATS GRID
-   ========================================================= */
+========================================================= */
 
 .stats-grid {
   width: 100%;
@@ -547,7 +595,7 @@
 
 /* =========================================================
    STAT CARD
-   ========================================================= */
+========================================================= */
 
 .stat-card {
   min-width: 0;
@@ -564,14 +612,12 @@
 
   box-shadow:
     0 4px 15px rgba(15, 23, 42, 0.05);
-
-  box-sizing: border-box;
 }
 
 
 /* =========================================================
    STAT TOP
-   ========================================================= */
+========================================================= */
 
 .stat-top {
   display: flex;
@@ -595,6 +641,8 @@
   place-items: center;
 
   font-size: 20px;
+
+  flex-shrink: 0;
 }
 
 .stat-change {
@@ -608,12 +656,14 @@
   padding: 5px 8px;
 
   border-radius: 20px;
+
+  white-space: nowrap;
 }
 
 
 /* =========================================================
    STAT TEXT
-   ========================================================= */
+========================================================= */
 
 .stat-card p {
   margin: 18px 0 5px;
@@ -635,7 +685,7 @@
 
 /* =========================================================
    DASHBOARD GRID
-   ========================================================= */
+========================================================= */
 
 .dashboard-grid {
   width: 100%;
@@ -654,7 +704,7 @@
 
 /* =========================================================
    DASHBOARD CARD
-   ========================================================= */
+========================================================= */
 
 .dashboard-card {
   min-width: 0;
@@ -671,14 +721,12 @@
 
   box-shadow:
     0 4px 15px rgba(15, 23, 42, 0.05);
-
-  box-sizing: border-box;
 }
 
 
 /* =========================================================
    CARD HEADER
-   ========================================================= */
+========================================================= */
 
 .card-header {
   display: flex;
@@ -722,7 +770,7 @@
 
 /* =========================================================
    CHART
-   ========================================================= */
+========================================================= */
 
 .chart {
   height: 230px;
@@ -781,8 +829,6 @@
   justify-content: space-around;
 
   padding: 0 25px;
-
-  box-sizing: border-box;
 }
 
 .chart-bars i {
@@ -837,7 +883,7 @@
 
 /* =========================================================
    DELIVERY OVERVIEW
-   ========================================================= */
+========================================================= */
 
 .delivery-circle {
   width: 155px;
@@ -931,8 +977,7 @@
 
 /* =========================================================
    RECENT ORDERS CARD
-   IMPORTANT SECTION
-   ========================================================= */
+========================================================= */
 
 .orders-card {
   width: 100%;
@@ -956,14 +1001,12 @@
     0 4px 15px rgba(15, 23, 42, 0.05);
 
   overflow: hidden;
-
-  box-sizing: border-box;
 }
 
 
 /* =========================================================
    ORDERS HEADER
-   ========================================================= */
+========================================================= */
 
 .orders-card .card-header {
   padding: 22px 22px 0;
@@ -975,8 +1018,6 @@
   justify-content: space-between;
 
   gap: 15px;
-
-  box-sizing: border-box;
 }
 
 .orders-card .card-header h2 {
@@ -999,7 +1040,7 @@
 
 /* =========================================================
    VIEW ALL
-   ========================================================= */
+========================================================= */
 
 .orders-card .view-all {
   flex-shrink: 0;
@@ -1014,6 +1055,8 @@
 
   padding: 5px 0;
 
+  font-family: inherit;
+
   font-size: 12px;
   font-weight: 600;
 }
@@ -1025,7 +1068,7 @@
 
 /* =========================================================
    ORDERS TABLE WRAPPER
-   ========================================================= */
+========================================================= */
 
 .orders-card .table-wrapper {
   width: 100%;
@@ -1036,16 +1079,13 @@
   overflow-x: auto;
   overflow-y: hidden;
 
-  box-sizing: border-box;
-
   -webkit-overflow-scrolling: touch;
 }
 
 
 /* =========================================================
    RECENT ORDERS TABLE
-   DO NOT USE GLOBAL table CSS HERE
-   ========================================================= */
+========================================================= */
 
 .orders-card table {
   width: 100%;
@@ -1057,14 +1097,12 @@
   table-layout: auto;
 
   background: #ffffff;
-
-  box-sizing: border-box;
 }
 
 
 /* =========================================================
-   ORDERS TABLE HEADER
-   ========================================================= */
+   TABLE HEADER
+========================================================= */
 
 .orders-card table th {
   padding: 12px 14px;
@@ -1081,14 +1119,12 @@
   white-space: nowrap;
 
   border-bottom: 1px solid #e5e7eb;
-
-  box-sizing: border-box;
 }
 
 
 /* =========================================================
-   ORDERS TABLE BODY
-   ========================================================= */
+   TABLE BODY
+========================================================= */
 
 .orders-card table td {
   padding: 14px;
@@ -1104,8 +1140,6 @@
   border-bottom: 1px solid #f1f5f9;
 
   vertical-align: middle;
-
-  box-sizing: border-box;
 }
 
 .orders-card table td strong {
@@ -1113,11 +1147,6 @@
 
   font-weight: 600;
 }
-
-
-/* =========================================================
-   TABLE SMALL TEXT
-   ========================================================= */
 
 .orders-card table td small {
   display: block;
@@ -1129,19 +1158,9 @@
   font-size: 9px;
 }
 
-
-/* =========================================================
-   TABLE LAST ROW
-   ========================================================= */
-
 .orders-card table tbody tr:last-child td {
   border-bottom: none;
 }
-
-
-/* =========================================================
-   TABLE HOVER
-   ========================================================= */
 
 .orders-card table tbody tr:hover td {
   background: #f9fafb;
@@ -1149,8 +1168,8 @@
 
 
 /* =========================================================
-   PAYMENT STATUS
-   ========================================================= */
+   PAYMENT
+========================================================= */
 
 .orders-card .payment {
   display: inline-flex;
@@ -1172,26 +1191,23 @@
 
 .orders-card .payment.paid {
   background: #dcfce7;
-
   color: #15803d;
 }
 
 .orders-card .payment.pending {
   background: #fef3c7;
-
   color: #a16207;
 }
 
 .orders-card .payment.failed {
   background: #fee2e2;
-
   color: #dc2626;
 }
 
 
 /* =========================================================
    ORDER STATUS
-   ========================================================= */
+========================================================= */
 
 .orders-card .order-status {
   display: inline-flex;
@@ -1213,32 +1229,28 @@
 
 .orders-card .order-status.in-flight {
   background: #ffedd5;
-
   color: #ea580c;
 }
 
 .orders-card .order-status.preparing {
   background: #fef3c7;
-
   color: #a16207;
 }
 
 .orders-card .order-status.delivered {
   background: #dcfce7;
-
   color: #15803d;
 }
 
 .orders-card .order-status.pending {
   background: #f3f4f6;
-
   color: #4b5563;
 }
 
 
 /* =========================================================
    DRONE STATUS
-   ========================================================= */
+========================================================= */
 
 .orders-card .drone-status {
   display: inline-flex;
@@ -1260,26 +1272,23 @@
 
 .orders-card .drone-status.available {
   background: #dcfce7;
-
   color: #15803d;
 }
 
 .orders-card .drone-status.in-flight {
   background: #ffedd5;
-
   color: #ea580c;
 }
 
 .orders-card .drone-status.charging {
   background: #fef3c7;
-
   color: #a16207;
 }
 
 
 /* =========================================================
    ACTION BUTTON
-   ========================================================= */
+========================================================= */
 
 .orders-card .action-btn {
   width: 32px;
@@ -1321,7 +1330,7 @@
 
 /* =========================================================
    EMPTY ORDERS
-   ========================================================= */
+========================================================= */
 
 .orders-card .empty-orders {
   padding: 40px 20px;
@@ -1344,7 +1353,7 @@
 
 /* =========================================================
    BOTTOM GRID
-   ========================================================= */
+========================================================= */
 
 .bottom-grid {
   width: 100%;
@@ -1363,7 +1372,7 @@
 
 /* =========================================================
    DRONE LIST
-   ========================================================= */
+========================================================= */
 
 .drone-list {
   margin-top: 15px;
@@ -1431,7 +1440,7 @@
 
 /* =========================================================
    BATTERY
-   ========================================================= */
+========================================================= */
 
 .battery-bar {
   width: 70px;
@@ -1468,31 +1477,8 @@
 
 
 /* =========================================================
-   DRONE STATUS
-   ========================================================= */
-
-.drone-status.available {
-  background: #dcfce7;
-
-  color: #15803d;
-}
-
-.drone-status.in-flight {
-  background: #ffedd5;
-
-  color: #ea580c;
-}
-
-.drone-status.charging {
-  background: #fef3c7;
-
-  color: #a16207;
-}
-
-
-/* =========================================================
    QUICK ACTIONS
-   ========================================================= */
+========================================================= */
 
 .quick-grid {
   display: grid;
@@ -1515,6 +1501,8 @@
   background: #ffffff;
 
   color: #111827;
+
+  font-family: inherit;
 
   cursor: pointer;
 
@@ -1543,7 +1531,7 @@
 
 /* =========================================================
    PLACEHOLDER
-   ========================================================= */
+========================================================= */
 
 .dashboard-placeholder {
   width: 100%;
@@ -1560,8 +1548,6 @@
 
   box-shadow:
     0 4px 15px rgba(15, 23, 42, 0.05);
-
-  box-sizing: border-box;
 
   text-align: center;
 }
@@ -1584,27 +1570,10 @@
 
 
 /* =========================================================
-   GLOBAL SAFETY
-   Prevent dashboard content from overflowing
-   ========================================================= */
-
-.admin-dashboard *,
-.admin-dashboard *::before,
-.admin-dashboard *::after {
-  box-sizing: border-box;
-}
-
-.admin-dashboard img {
-  max-width: 100%;
-}
-
-
-/* =========================================================
-   LARGE TABLET
-   ========================================================= */
+   LARGE DESKTOP / SMALL LAPTOP
+========================================================= */
 
 @media (max-width: 1200px) {
-
   .stats-grid {
     grid-template-columns:
       repeat(2, minmax(0, 1fr));
@@ -1617,26 +1586,22 @@
   .bottom-grid {
     grid-template-columns: 1fr;
   }
-
 }
 
 
 /* =========================================================
    TABLET
-   ========================================================= */
+========================================================= */
 
 @media (max-width: 1000px) {
-
   .admin-sidebar {
-    width: 220px;
-
-    min-width: 220px;
+    width: 230px;
   }
 
   .admin-main {
-    width: calc(100% - 220px);
+    width: calc(100% - 230px);
 
-    margin-left: 220px;
+    margin-left: 230px;
   }
 
   .admin-content {
@@ -1650,20 +1615,16 @@
   .admin-search {
     width: 180px;
   }
-
 }
 
 
 /* =========================================================
    SMALL TABLET
-   ========================================================= */
+========================================================= */
 
 @media (max-width: 850px) {
-
   .admin-sidebar {
     width: 70px;
-
-    min-width: 70px;
 
     padding: 20px 10px;
   }
@@ -1719,16 +1680,14 @@
   .admin-content {
     padding: 20px;
   }
-
 }
 
 
 /* =========================================================
    MOBILE
-   ========================================================= */
+========================================================= */
 
 @media (max-width: 600px) {
-
   .stats-grid {
     grid-template-columns: 1fr;
 
@@ -1824,20 +1783,16 @@
   .quick-grid {
     grid-template-columns: 1fr 1fr;
   }
-
 }
 
 
 /* =========================================================
    VERY SMALL MOBILE
-   ========================================================= */
+========================================================= */
 
 @media (max-width: 420px) {
-
   .admin-sidebar {
     width: 60px;
-
-    min-width: 60px;
 
     padding: 15px 7px;
   }
@@ -1872,5 +1827,72 @@
   .quick-grid {
     grid-template-columns: 1fr;
   }
+}
 
+
+/* =========================================================
+   HEIGHT FIX
+   IMPORTANT FOR 100% BROWSER ZOOM / SHORT SCREENS
+
+   Sidebar content will scroll instead of hiding
+========================================================= */
+
+@media (max-height: 750px) and (min-width: 851px) {
+  .admin-sidebar {
+    overflow-y: auto;
+  }
+
+  .sidebar-bottom {
+    margin-top: 25px;
+  }
+}
+
+
+/* =========================================================
+   ALL ORDERS PAGE - SCROLLBAR FIX
+========================================================= */
+
+.admin-dashboard {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.admin-main {
+    width: calc(100% - 250px);
+    max-width: calc(100% - 250px);
+    overflow-x: hidden;
+}
+
+.admin-content {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Orders page container */
+.all-orders-page {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow-x: hidden;
+}
+
+/* Orders table */
+.all-orders-page .table-wrapper {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.all-orders-page table {
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Prevent individual elements from creating page overflow */
+.all-orders-page * {
+    max-width: 100%;
+    box-sizing: border-box;
 }
